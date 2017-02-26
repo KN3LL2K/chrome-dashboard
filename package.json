@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/KN3LL2K/chrome-dashboard#readme",
   "dependencies": {
+    "gsap": "^1.19.1",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
