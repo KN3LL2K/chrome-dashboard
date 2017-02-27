@@ -49,8 +49,30 @@ body {
 
 #clock-face {
   min-width:120px;
-  min-height:120px;
-  background-color:red;
+  min-height:120px; 
+  z-index:10;
+  position: relative;
+}
+
+#hour-hand {
+  top:30px;
+  left:57.5px;
+  z-index:12;
+  position: absolute;
+}
+
+#min-hand {
+  top:9.5px;
+  left:57.5px;
+  z-index:13;
+  position: absolute;
+}
+
+#sec-hand {
+  top:60.5px;
+  left:59.6px;
+  z-index:110;
+  position: absolute;
 }
 
 #time {

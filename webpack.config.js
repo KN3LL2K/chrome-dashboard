@@ -16,6 +16,7 @@ module.exports = {
       }
     ]
   },
+  devtool: "cheap-eval-source-map"
   // resolveLoader: {
   //   root: [
   //     path.join(__dirname, 'node_modules'),

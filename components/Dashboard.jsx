@@ -4,6 +4,8 @@ import Date from './Date.jsx'
 import Twitter from './Twitter.jsx';
 import Weather from './Weather.jsx';
 import TransitLarge from './TransitLarge.jsx';
+import TweenMax from 'gsap';
+import TransitionGroup from 'react-addons-transition-group';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -12,16 +14,25 @@ class Dashboard extends React.Component {
     }
   }
 
+
+  componentDidMount() {
+    const el = this;
+    TweenMax.staggerFrom('.sq-component', 0.5, {scale:0.1, y:200, opacity: 0, delay:0.8}, 0.2)
+    TweenMax.from('.tall-component', 0.5, {scale:0.5, y:200, opacity: 0, delay:1.6})
+  }
+
   render() {
     
 
     return (
       <div id='body-wrapper'>
-      <Clock />
-      <Date />
-      <Twitter />
-      <Weather />
-      <TransitLarge />
+      <TransitionGroup>
+        <Clock />
+        <Date />
+        <Twitter />
+        <Weather />
+        <TransitLarge />
+      </TransitionGroup>
       </div>
     );
   }
