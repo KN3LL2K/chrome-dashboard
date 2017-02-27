@@ -1,6 +1,6 @@
 import React from 'react';
 import Clock from './Clock.jsx';
-import Date from './Date.jsx'
+import DateComp from './Date.jsx'
 import Twitter from './Twitter.jsx';
 import Weather from './Weather.jsx';
 import TransitLarge from './TransitLarge.jsx';
@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
       <div id='body-wrapper'>
       <TransitionGroup>
         <Clock />
-        <Date />
+        <DateComp />
         <Twitter />
         <Weather />
         <TransitLarge />

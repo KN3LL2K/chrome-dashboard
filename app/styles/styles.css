@@ -13,15 +13,21 @@ body {
   background-color:#F8F3EE;
   color:#F8F3EE;
   font-family: 'Quicksand', sans-serif;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 #body-wrapper {
   width:770px;
   height:510px;
-  margin:10px;
+  /*margin:10px;*/
+  padding:0;
   position:absolute;
-  top:15%;
-  left:12%;
+  /*top:15%;*/
+  top:calc(50% - 255px);
+  left:calc(50% - 385px);
+  /*left:12%;*/
 }
 
 .sq-component {
@@ -39,44 +45,43 @@ body {
 }
 
 #clock {
-  padding:50px;
+  padding:30px;
   display:flex;
   justify-content: space-between;
   align-items:center;
-  
   flex-direction: column;
 }
 
 #clock-face {
-  min-width:120px;
-  min-height:120px; 
+  min-width:123px;
+  min-height:123px; 
   z-index:10;
   position: relative;
 }
 
 #hour-hand {
-  top:30px;
-  left:57.5px;
+  top:33px;
+  left:58px;
   z-index:12;
   position: absolute;
 }
 
 #min-hand {
-  top:9.5px;
-  left:57.5px;
+  top:12px;
+  left:59px;
   z-index:13;
   position: absolute;
 }
 
 #sec-hand {
-  top:14px;
-  left:59.6px;
+  top:15px;
+  left:60px;
   z-index:110;
   position: absolute;
 }
 
 #time {
-  font-size:36px;
+  font-size:42px;
 }
 
 .first {
@@ -115,7 +120,19 @@ body {
   left:520px;
 }
 
+#date-comp {
+  padding: 30px;
+  font-size: 36px;
+  line-height: 36px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
+#date {
+  font-size:100px;
+  line-height: 100px;
+}
 
 
 .yellow {

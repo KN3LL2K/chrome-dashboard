@@ -36,9 +36,9 @@ class Clock extends React.Component {
     let newHour = new Date().getHours();
     let newMin = new Date().getMinutes();
     let newSec = new Date().getSeconds();
-    TweenMax.to('#hour-hand', 0.0167, {rotation:((newHour * 30) + (newMin/2)), transformOrigin:'50% 30px'});
-    TweenMax.to('#min-hand', 0.0167, {rotation:(newMin * 6), transformOrigin:'50% 51px'});
-    TweenMax.to('#sec-hand', 0.0167, {rotation:(newSec * 6), transformOrigin:'50% 47px'});
+    TweenMax.to('#hour-hand', 0.0167, {rotation:((newHour * 30) + (newMin/2)), transformOrigin:'50% 27.5px'});
+    TweenMax.to('#min-hand', 0.0167, {rotation:(newMin * 6), transformOrigin:'50% 49px'});
+    TweenMax.to('#sec-hand', 0.0167, {rotation:(newSec * 6), transformOrigin:'50% 46px'});
     this.setState({
       hour: newHour,
       minutes: newMin,

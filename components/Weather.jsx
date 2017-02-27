@@ -12,7 +12,7 @@ class Weather extends React.Component {
 
     return (
       <div id='weather' className='sq-component ltred bottom-second'>
-      <div>Weather</div>
+      <div></div>
       
       </div>
     );

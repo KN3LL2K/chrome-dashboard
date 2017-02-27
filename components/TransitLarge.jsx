@@ -12,7 +12,7 @@ class TransitLarge extends React.Component {
 
     return (
       <div id='transitLarge' className='tall-component red third'>
-      <div>TransitLarge</div>
+      <div></div>
       
       </div>
     );

@@ -12,7 +12,7 @@ class Twitter extends React.Component {
 
     return (
       <div id='twitter' className='sq-component ltblue bottom-first'>
-      <div>twitter</div>
+      <div></div>
       
       </div>
     );
