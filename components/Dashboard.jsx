@@ -14,16 +14,13 @@ class Dashboard extends React.Component {
     }
   }
 
-
   componentDidMount() {
     const el = this;
-    TweenMax.staggerFrom('.sq-component', 0.5, {scale:0.1, y:200, opacity: 0, delay:0.8}, 0.2)
-    TweenMax.from('.tall-component', 0.5, {scale:0.5, y:200, opacity: 0, delay:1.6})
+    TweenMax.staggerFrom('.sq-component', 0.8, { y:15, opacity: 0, delay:0.3, ease:Elastic.easeOut}, 0.08)
+    TweenMax.from('.tall-component', 0.8, {y:15, opacity: 0, ease:Elastic.easeOut, delay:0.44})
   }
 
   render() {
-    
-
     return (
       <div id='body-wrapper'>
       <TransitionGroup>

@@ -14,11 +14,11 @@ class DateComp extends React.Component {
   }
 
   render() {
-    var date = new Date().getDate();
-    var day = new Date().getDay();
-    var month = new Date().getMonth();
-    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    let date = new Date().getDate();
+    let day = new Date().getDay();
+    let month = new Date().getMonth();
+    let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
     return (
       <div id='date-comp' className='sq-component yellow second'>

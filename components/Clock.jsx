@@ -14,23 +14,15 @@ class Clock extends React.Component {
     }
   }
 
-
   componentDidMount() {
     this.timerID = setInterval(() => {
       this.tick()
     }, 1000);
-
-
   }
 
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
-
-  init() {
-
-  }
-
 
   tick() {
     let newHour = new Date().getHours();
@@ -47,20 +39,14 @@ class Clock extends React.Component {
   }
 
   render() {
-    let minutes = () => {
-      if (this.state.minutes < 10) {
-        return '0' + this.state.minutes;
+    let format = (inc) => {
+      if (this.state[inc] < 10) {
+        return '0' + this.state[inc];
       } else {
-        return this.state.minutes;
+        return this.state[inc];
       }
     }
-    let hours = () => {
-      if (this.state.hours < 10) {
-        return '0' + this.state.hours;
-      } else {
-        return this.state.hours;
-      }
-    }
+
        
     return (
         <div id='clock' className='sq-component green first'>
@@ -70,7 +56,7 @@ class Clock extends React.Component {
           <img id='min-hand' className='clock-hand' src='assets/minHand.svg' />
           <img id='sec-hand' src='assets/secHand.svg' />
         </div>
-          <span id='time'>{hours()} : {minutes()}</span>
+          <span id='time'>{format('hours')}:{format('minutes')}</span>
           
         
         </div>
