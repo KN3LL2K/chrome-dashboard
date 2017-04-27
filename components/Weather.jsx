@@ -43,13 +43,18 @@ class Weather extends React.Component {
       .get('/api/forecast')
       .query({longitude: longitude, latitude: latitude})
       .then(function(res) {
+
+        // maybe store forecast locally with time stamp.
+        // if forecast is older than say 1hr
+        //    fetch new forcast
+
         let success = res.body.success;
         let icon = res.body.icon;
         let temperature = res.body.temperature;
         if (success === true) {
           this.setForecast(temperature, icon)
         } else {
-
+          // error handle this
         }
       }.bind(this))
   }
@@ -73,8 +78,9 @@ class Weather extends React.Component {
 class Forecast extends React.Component {
   componentDidMount() {
       TweenMax.from('#forecast', 0.3, {opacity: 0, delay: 0.3});
+      TweenMax.from('#forecast a', 0.6, {opacity: 0, delay: 2});
     }
-    
+
   render() {
     let temp = Math.round(this.props.temp);
     let icon = 'assets/' + this.props.icon + '.svg';
