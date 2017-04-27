@@ -1,7 +1,5 @@
 import React from 'react';
-// import Snap from 'snapsvg';
 import TransitionGroup from 'react-addons-transition-group';
-const Snap = require( "imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js" );
 
 class Clock extends React.Component {
   constructor(props) {
@@ -15,6 +13,24 @@ class Clock extends React.Component {
   }
 
   componentDidMount() {
+    this.initHands();
+    
+
+  }
+
+  initHands() {
+    let newHour = new Date().getHours();
+    let newMin = new Date().getMinutes();
+    let newSec = new Date().getSeconds();
+    TweenMax.from('#clock-face', 1, {opacity: 0, delay: 1});
+    TweenMax.from('#clock-face.clock-hand', 1, {opacity: 0, delay: 1});
+    TweenMax.from('#time', 1, {opacity: 0, delay: 1});
+    TweenMax.to('#hour-hand', 2, {rotation:((newHour * 30) + (newMin/2)), transformOrigin:'50% 27.5px', delay: 0.5});
+    TweenMax.to('#min-hand', 2, {rotation:(newMin * 6), transformOrigin:'50% 49px', delay: 0.5});
+    TweenMax.to('#sec-hand', 2, {rotation:(newSec * 6), transformOrigin:'50% 46px', onComplete: this.startTimer.bind(this), delay: 0.5});
+  }
+
+  startTimer() {
     this.timerID = setInterval(() => {
       this.tick()
     }, 1000);

@@ -71,18 +71,23 @@ class Weather extends React.Component {
 }
 
 class Forecast extends React.Component {
+  componentDidMount() {
+      TweenMax.from('#forecast', 0.3, {opacity: 0, delay: 0.3});
+    }
+    
   render() {
     let temp = Math.round(this.props.temp);
     let icon = 'assets/' + this.props.icon + '.svg';
+
     return (
-    <div id='forecast'>
-      <img className='icon' src={icon} />
-      <div>
-        <span> {temp} </span> 
-        <img className='fahrenheit' src='assets/fahrenheit.svg' />
+      <div id='forecast'>
+        <img className='icon' src={icon} />
+        <div>
+          <span> {temp} </span> 
+          <img className='fahrenheit' src='assets/fahrenheit.svg' />
+        </div>
+        <a href='https://darksky.net/poweredby/'>Powered By Dark Sky</a>
       </div>
-      <a href='https://darksky.net/poweredby/'>Powered By Dark Sky</a>
-    </div>
       )
   }
 }

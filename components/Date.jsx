@@ -10,8 +10,10 @@ class DateComp extends React.Component {
     };
   }
 
-  componentDidMount() {
-  }
+   componentDidMount() {
+      TweenMax.from('#date', 0.3, {opacity: 0, delay: 1});
+      TweenMax.from('.dateText', 0.3, {opacity: 0, delay: 1});
+    }
 
   render() {
     let date = new Date().getDate();
@@ -22,9 +24,9 @@ class DateComp extends React.Component {
 
     return (
       <div id='date-comp' className='sq-component yellow second'>
-      {days[day]}
+      <span className='dateText'>{days[day]}</span>
       <div id='date'>{date}</div>
-      {months[month]}
+      <span className='dateText'>{months[month]}</span>
       </div>
       );
   }
